@@ -4,5 +4,5 @@ export interface EmployeeUpdate {
   dob: string
   department: string
   address: string
-  status: string
+  workingStatus: string
 }

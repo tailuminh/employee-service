@@ -7,7 +7,7 @@ export interface EmployeeItem {
   dob: string
   department: string
   address: string
-  status: string
+  workingStatus: string
   onboardAt: string
   attachmentUrl?: string
 }

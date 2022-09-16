@@ -6,7 +6,7 @@ export interface CreateEmployeeRequest {
     dob: string
     department: string
     address: string
-    status: string
+    workingStatus: string
     attachmentUrl?: string
   }
   

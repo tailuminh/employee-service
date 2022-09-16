@@ -22,7 +22,7 @@
       "type": "string",
       "minimum": 2
     },
-    "status": {
+    "workingStatus": {
       "type": "string",
       "minimum": 2
     }
@@ -33,7 +33,7 @@
     "dob",
     "department",
     "address",
-    "status"
+    "workingStatus"
   ],
   "additionalProperties": false
 }

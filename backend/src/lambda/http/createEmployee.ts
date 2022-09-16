@@ -12,14 +12,14 @@ export const handler = middy(
     const userId = getUserId(event)
     try {
       const newCreatedEmployee = await createEmployee(userId, newEmployee);
-    return {
-      statusCode: 201,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true
-      },
-      body: JSON.stringify({item: newCreatedEmployee})
-    }
+      return {
+        statusCode: 201,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true
+        },
+        body: JSON.stringify({ item: newCreatedEmployee })
+      }
     }
     catch (err) {
       return {

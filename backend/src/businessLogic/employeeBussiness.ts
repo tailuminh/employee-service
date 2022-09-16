@@ -14,7 +14,7 @@ export const getEmployees = async (userId: string): Promise<EmployeeItem[]> => {
 
 export const createEmployee = async (userId: string, employee: CreateEmployeeRequest): Promise<EmployeeItem> => {
     logger.log('info', 'Received employee create request: '.concat(JSON.stringify(employee)))
-    if ((await employeeAccess.getEmployeeByCitizenId(userId, employee.citizenId)).length) throw Error(`citizenId ${employee.citizenId} existed!`)
+    if ((await employeeAccess.getEmployeeByCitizenId(userId, employee.citizenId)).length) throw new Error(`citizenId ${employee.citizenId} existed!`)
     const employeeId = uuid.v4();
     const newEmployee: EmployeeItem = {
         ...employee,

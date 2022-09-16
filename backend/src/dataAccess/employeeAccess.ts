@@ -35,7 +35,8 @@ export class EmployeeAccess {
         let employee: EmployeeItem[]
         const result = await this.docClient.query({
             TableName: this.employeesTable,
-            KeyConditionExpression: 'userId = :userId, citizenId = :citizenId',
+            KeyConditionExpression: 'userId = :userId',
+            FilterExpression: 'citizenId = :citizenId',
             ExpressionAttributeValues: {
                 ':userId': userId,
                 ':citizenId': citizenId
@@ -62,25 +63,25 @@ export class EmployeeAccess {
                 "userId": userId,
                 "employeeId": employeeId
             },
-            UpdateExpression: "set firstName=:firstName, lastName=:lastName, dob=:dob, department=:department, address=:address, status=:status",
+            UpdateExpression: "set firstName=:firstName, lastName=:lastName, dob=:dob, department=:department, address=:address, workingStatus=:workingStatus",
             ExpressionAttributeValues: {
                 ":firstName": updateEmployee.firstName,
                 ":lastName": updateEmployee.lastName,
                 ":dob": updateEmployee.dob,
                 ":department": updateEmployee.department,
                 ":address": updateEmployee.address,
-                ":status": updateEmployee.status
+                ":workingStatus": updateEmployee.workingStatus
             }
         }).promise()
     }
 
-    deleteEmployee = async (userId: string, emmployeeId: string): Promise<void> => {
-        logger.log('info', 'Deleting eployee: '.concat(emmployeeId))
+    deleteEmployee = async (userId: string, employeeId: string): Promise<void> => {
+        logger.log('info', 'Deleting employee: '.concat(employeeId))
         await this.docClient.delete({
             TableName: this.employeesTable,
             Key: {
                 "userId": userId,
-                "emmployeeId": emmployeeId
+                "employeeId": employeeId
             }
         }).promise()
     }

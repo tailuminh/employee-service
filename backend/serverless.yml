@@ -24,7 +24,7 @@ provider:
   # ${self:provider.environment.ATTACHMENT_S3_BUCKET}
   environment:
     EMPLOYEES_TABLE: Parts-${self:provider.stage}
-    ATTACHMENT_S3_BUCKET: serverless-daniel-sps-images-${self:provider.stage}
+    ATTACHMENT_S3_BUCKET: employee-service-tailm2-images-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
 
   logs:

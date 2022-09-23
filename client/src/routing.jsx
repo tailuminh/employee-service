@@ -7,7 +7,7 @@ const history = createHistory()
 
 const auth = new Auth(history)
 
-const handleAuthentication = (props: any) => {
+const handleAuthentication = (props) => {
   const location = props.location
   if (/access_token|id_token|error/.test(location.hash)) {
     auth.handleAuthentication()

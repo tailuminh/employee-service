@@ -23,7 +23,7 @@ provider:
   # Use these variables in the functions and resources section below. For example,
   # ${self:provider.environment.ATTACHMENT_S3_BUCKET}
   environment:
-    EMPLOYEES_TABLE: Parts-${self:provider.stage}
+    EMPLOYEES_TABLE: Employees-${self:provider.stage}
     ATTACHMENT_S3_BUCKET: employee-service-tailm2-images-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
 

@@ -1,0 +1,42 @@
+.form {
+
+  .title {
+    font-size: 32px;
+    text-transform: capitalize;
+    color: #7e7e7e;
+  }
+  .form-check {
+    display: inline-block;
+  }
+
+  .form-label {
+    display: block;
+    font-weight: 600;
+  }
+
+  .date-picker {
+    input {
+      border: 1px solid #ced4da;
+      border-radius: 0.375rem;
+      padding: 0.375rem 0.75rem;
+    }
+  }
+
+  .radio-group {
+    label {
+      margin-right: 10px;
+    }
+  }
+  .react-datepicker {
+    &__input-container {
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  .spinner-border {
+    width: 20px;
+    height: 20px;
+  }
+}

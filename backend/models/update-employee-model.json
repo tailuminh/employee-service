@@ -12,7 +12,8 @@
       "minLength": 2
     },
     "dob": {
-      "type": "string"
+      "type": "string",
+      "minLength": 2
     },
     "department": {
       "type": "string",

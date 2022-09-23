@@ -10,15 +10,15 @@ export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     const userId = getUserId(event);
     try {
-      const parts: EmployeeItem[] = await getEmployees(userId);
-      if (parts) {
+      const employees: EmployeeItem[] = await getEmployees(userId);
+      if (employees) {
         return {
           statusCode: 200,
           headers: {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true
           },
-          body: JSON.stringify({ items: parts })
+          body: JSON.stringify({ items: employees })
         }
       }
       return {
